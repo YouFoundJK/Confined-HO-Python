@@ -19,13 +19,20 @@ Vpot = lambda x: x**2
 psi_hermite = lambda x, n: (1 / np.sqrt(2**n * sp.factorial(n) 
                                         * np.sqrt(np.pi))) * sp.hermite(n)(x) * np.exp(-x**2 / 2)
 
-a = -6              # lower limit of the domain
-b = +6              # upper limit of the domain
+
+
+
+L = 6               # half of domain size
 N = 500 
 
-x = np.linspace(a,b,N)
-h = x[1]-x[0]
+# Plot initializing
+plt.figure(figsize=(12,10))
+x = np.linspace(-1.8, +1.8, round(N/2))
+plt.plot(x, Vpot(x), lw=2, ls="-.", label="Harmonic Potential", color='black')
 
+
+x = np.linspace(-L ,L, N)
+h = x[1]-x[0]
 
 # Hamiltonian Matrix
 T = np.array([[0, -2, 1] if i == 0 else [1, -2, 0] if i == N-3 else [1, -2, 1] for i in range(N-2)]) 
@@ -46,15 +53,19 @@ print("Error:", error)
 
 
 # Plotting the graphs
-plt.figure(figsize=(12,10))
 y = np.concatenate(([0], vec, [0]))         # matching the np.array shapes
-plt.plot(x, y, lw=3, label="0")             # Use label directly instead of formatting
+plt.plot(x, y, lw=3, label="0", color="blue")             # Use label directly instead of formatting
 
-plt.plot(x, psi_hermite(x, 1), lw=2, label="Hermite", ls='--')
+plt.plot(x, psi_hermite(x, 1), lw=2, label="Hermite", ls='--', color="orange")
 
 
 plt.xlabel('x', size=14)
 plt.ylabel('$\psi$(x)',size=14)
 plt.legend()
 plt.title('Confined & Simple HO solution',size=14)
+plt.grid() # Add major grid lines
+plt.minorticks_on() # Enable minor ticks
+plt.grid(which='minor', alpha=0.2) # Add minor grid lines with lower opacity
+plt.tight_layout() # Adjust the spacing of the plot
 plt.show()
+

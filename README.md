@@ -1,3 +1,18 @@
+v3.0
+-------------------
+
+- To implement tracking eigen values in the shifted power routine for better visual aesthetic.
+
+DONE - 
+
+- Gif created for visualising the confinement
+- Optimised (Vectorization in solver.py)
+- Tridiagonal optimisation completed
+- Normalized the eigen state using trapezium integration
+- Added Hermite poly for comparison.
+
+=====================================
+
 v2.1
 -------------------
 
