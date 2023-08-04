@@ -61,7 +61,6 @@ def worker(L):
         #     "\nEigenvalue: ", z, " in iterations: ", iterations, "with Error: ", error)
 
         # Plotting the graphs
-        
         y = np.concatenate(([0], vec, [0]))             # matching the np.array shapes
     
         plt.plot(x, y, lw=3, label=f"E ={z:.3f}", color=col[order])            # Use label directly instead of formatting
@@ -92,8 +91,8 @@ def worker(L):
 
 if __name__ == '__main__':
 
-    worker(3)
-    sleep(1000)
+    # worker(3)
+    # sleep(1000)
     file_list = []
     file_list = Parallel(n_jobs=10, verbose=True)(delayed(worker)(L) for L in np.linspace(1.0, 4.0, 200))
     sleep(5)
