@@ -1,3 +1,17 @@
+v2.1
+-------------------
+
+- Plot for part 3 of question
+
+DONE - 
+
+- Optimised (Vectorization in solver.py)
+- Tridiagonal optimisation completed
+- Normalized the eigen state using trapezium integration
+- Added Hermite poly for comparison.
+
+=====================================
+
 v2.0
 -------------------
 
