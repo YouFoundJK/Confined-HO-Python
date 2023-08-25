@@ -1,3 +1,11 @@
+Solution of the Schodinger Eqation for Harmonic Oscillator Confined in Potential well (Dirichlet's Condition on both boundaries). 
+
+- Shifted Inverse Power routine is used to find eigen values
+- Tridiagonal Optimized
+- Trapezoid integration is used to normalize wavefunctions.
+- Benchmark using Scipy.special.Hermit Polynomials.
+
+
 v3.0
 -------------------
 
